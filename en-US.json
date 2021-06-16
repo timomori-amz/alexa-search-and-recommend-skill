@@ -1,0 +1,101 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "what is around skill",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "SearchPlaceIntent",
+          "slots": [
+            {
+              "name": "PlaceName",
+              "type": "AMAZON.LocalBusiness",
+              "samples": [
+                "{PlaceName}"
+              ]
+            }
+          ],
+          "samples": [
+            "where is {PlaceName}",
+            "search {PlaceName}",
+            "find me {PlaceName}"
+          ]
+        },
+        {
+          "name": "RecommendIntent",
+          "slots": [],
+          "samples": [
+            "explore",
+            "recommend"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "SearchPlaceIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "PlaceName",
+              "type": "AMAZON.LocalBusiness",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1405689310885.159601717170"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1405689310885.159601717170",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Where are you looking for again?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "10"
+}
